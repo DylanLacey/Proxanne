@@ -53,7 +53,7 @@ module Proxanne
               puts "Sauce Connect is ready"
               @semaphor.synchronize { @ready = true }
             else
-              #puts line
+              puts line if $DEBUG
             end
           end
         else

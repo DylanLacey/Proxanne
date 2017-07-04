@@ -1,0 +1,6 @@
+browsermob_proxy:
+  binary_location:
+  startup_port: 8081
+
+sauce_connect:
+  binary_location:

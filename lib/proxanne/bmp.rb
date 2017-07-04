@@ -33,7 +33,7 @@ module Proxanne
         process.start
 
         if process.alive?
-          puts "BMP is starting up..."
+          puts "BMP is starting up on port #{port}..."
           
           while true
             line = @stdin_r.gets
@@ -41,7 +41,7 @@ module Proxanne
               puts "BMP is ready"
               @semaphor.synchronize { @ready = true }
             else
-              #puts line
+              puts line if $DEBUG
             end
           end
         else
@@ -50,7 +50,7 @@ module Proxanne
       end
     end
 
-    def wait_until_ready timeout=15
+    def wait_until_ready timeout=25
       timeout_after = Time.now + 15
 
       while !ready && (Time.now < timeout_after)

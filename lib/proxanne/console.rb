@@ -11,6 +11,8 @@ module Proxanne
       @output = STDOUT
       @input = STDIN
 
+      @output.puts "Proxanne is ready and capturing."
+
       parse_command
     end
 
@@ -40,6 +42,7 @@ module Proxanne
       file.write content.raw_body
       file.close
       @output.puts "Saved"
+      @capture_number += 1
     rescue => e
       @output.puts e
     end

@@ -2,4 +2,17 @@
 
 require "proxanne"
 
-Proxanne.start_bmp
+if !Proxanne.config_file_exists?
+  begin
+    file_location = Proxanne.create_config_file
+    puts "Please complete the config file at #{file_location} before using Proxanne."
+    exit 1
+  rescue SystemCallError => e
+    puts "Experienced a problem creating the config file"
+    puts e
+    exit 1
+  end
+
+else
+  Proxanne.start
+end
