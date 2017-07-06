@@ -21,7 +21,7 @@ module Proxanne
     end
 
     def start
-      process = ChildProcess.build location, '--pac', pacfile_path
+      process = ChildProcess.build location, flags, '--pac', pacfile_path
       @stdin_r, @stdin_w = IO.pipe
       @stder_r, @stder_w = IO.pipe
 
