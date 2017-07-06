@@ -14,6 +14,8 @@ Then, run `proxanne` to create `~/.proxanne` and `~/.proxanne/proxanne.conf`.  O
 
 ## Usage
 
+Store your [Sauce Labs](www.saucelabs.com) username and access key in a SAUCE_USERNAME and SAUCE_ACCESS_KEY environment variable
+
 Run `proxanne` and wait for it to tell you it's ready and capturing.  When you want to save a HAR file, enter the filename and hit enter, or just hit enter to accept the default filename.
 
 Type `quit` to leave.

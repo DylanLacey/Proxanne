@@ -41,6 +41,7 @@ module Proxanne
       @bmp_location = @config_file["browsermob_proxy"]["binary_location"]
       @bmp_port = (@config_file["browsermob_proxy"]["startup_port"] || 8081).to_i
       @sc_location = @config_file["sauce_connect"]["binary_location"]
+      @sc_flags = @config_file["sauce_connect"]["flags"]
     end
 
     def read_config_file

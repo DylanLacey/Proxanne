@@ -44,9 +44,9 @@ module Proxanne
     end
 
     def create_sc proxied_port
-      sc = SauceConnect.new proxied_port
+      sc = SauceConnect.new proxied_port 
       sc.location = @config.sc_location
-
+      sc.flags = @config.flags
       sc.start
       sc.wait_until_ready
 
